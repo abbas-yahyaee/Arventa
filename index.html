@@ -23,21 +23,46 @@
     }
 
     .logo-mark {
-      width: 28px;
+      width: var(--logo-nav);
       height: auto;
       display: block;
+      image-rendering: auto;
     }
 
     .brand-name {
-      font-weight: 650;
-      letter-spacing: 0.10em;
-      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      font-size: 1.15rem;
+    }
+
+    .navbar-brand {
+      gap: 0.5rem;
     }
 
     .navbar-brand:hover .logo-mark {
-  opacity: 0.95;
-}
-    
+      opacity: 0.95;
+    }
+
+    .navbar-nav .nav-link {
+      line-height: 1.2;
+      padding-top: 0.45rem;
+      padding-bottom: 0.45rem;
+    }
+
+    .navbar-dark {
+      background: rgba(11, 11, 11, .75);
+      /* fallback base */
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(42, 42, 42, .65);
+    }
+
+    @supports ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
+      .navbar-dark {
+        background: rgba(11, 11, 11, .55);
+      }
+    }
+
     .logo-mark--hero {
       width: var(--logo-hero);
     }
@@ -93,16 +118,6 @@
       background: rgba(11, 11, 11, .55);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(42, 42, 42, .65);
-    }
-
-    .brand-mark {
-      width: 40px;
-      height: 40px;
-      border: 1px solid rgba(255, 255, 255, .18);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, .04);
     }
 
     .btn-primary {

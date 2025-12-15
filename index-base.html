@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ARVENTA | Corporate Printing & Promotional Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #0b0b0b;
+      --bg-surface: #141414;
+      --border-color: #2a2a2a;
+      --text-muted: #b5b5b5;
+      --accent: #d32f2f;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: #ffffff;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    }
+
+    .section { padding: 90px 0; }
+
+    .surface {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+    }
+
+    .text-muted { color: var(--text-muted) !important; }
+
+    .btn-primary {
+      background-color: var(--accent);
+      border: none;
+      font-weight: 600;
+      padding: 14px 34px;
+    }
+
+    .btn-primary:hover { background-color: #b71c1c; }
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent);
+      margin: 24px auto;
+    }
+
+    footer { border-top: 1px solid var(--border-color); }
+  </style>
+</head>
+
+<body>
+
+<!-- LANGUAGE SWITCH -->
+<div class="container py-3 text-end">
+  <button class="btn btn-sm btn-outline-light" onclick="switchLang('en')">EN</button>
+  <button class="btn btn-sm btn-outline-light" onclick="switchLang('tr')">TR</button>
+</div>
+
+<!-- HERO -->
+<section class="vh-100 d-flex align-items-center text-center"
+  style="background:
+  linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.85)),
+  url('hero-printing.jpg') center/cover no-repeat;">
+
+  <div class="container">
+    <h1 class="fw-bold display-5 mb-3" data-lang="en">
+      Corporate Printing & Promotional Solutions
+    </h1>
+    <h1 class="fw-bold display-5 mb-3 d-none" data-lang="tr">
+      Kurumsal Baskı ve Promosyon Çözümleri
+    </h1>
+
+    <p class="fst-italic mb-4">Hayal edin, gerçekleştirelim…</p>
+
+    <div class="divider"></div>
+
+    <p class="text-muted fs-5 mb-5" data-lang="en">
+      Reliable printing, advertising, and promotional solutions for corporate clients.
+    </p>
+    <p class="text-muted fs-5 mb-5 d-none" data-lang="tr">
+      Kurumsal müşteriler için güvenilir baskı, reklam ve promosyon çözümleri.
+    </p>
+
+    <div class="d-flex justify-content-center gap-3">
+      <a href="#contact" class="btn btn-primary btn-lg" data-lang="en">Request a Quote</a>
+      <a href="#contact" class="btn btn-primary btn-lg d-none" data-lang="tr">Teklif Al</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container text-center mb-5">
+    <h2 data-lang="en">Our Services</h2>
+    <h2 class="d-none" data-lang="tr">Hizmetlerimiz</h2>
+    <p class="text-muted">
+      Printing, advertising, and promotional solutions under one roof
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4"><div class="surface p-4">Digital Printing</div></div>
+      <div class="col-md-4"><div class="surface p-4">Corporate Advertising</div></div>
+      <div class="col-md-4"><div class="surface p-4">Promotional Products</div></div>
+      <div class="col-md-4"><div class="surface p-4">Branding & Design</div></div>
+      <div class="col-md-4"><div class="surface p-4">Event & Organization</div></div>
+      <div class="col-md-4"><div class="surface p-4">Import & Export</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CORPORATE VALUE -->
+<section class="section surface">
+  <div class="container">
+    <h3 data-lang="en">Why Corporate Clients Choose ARVENTA</h3>
+    <h3 class="d-none" data-lang="tr">Kurumsal Firmalar Neden ARVENTA’yı Tercih Ediyor</h3>
+
+    <ul class="text-muted mt-3">
+      <li>Corporate-level quality standards</li>
+      <li>Bulk and contract-based production</li>
+      <li>Reliable delivery & timelines</li>
+      <li>End-to-end service management</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container text-center">
+    <h2>Contact</h2>
+    <p class="text-muted">
+      📞 +90 532 563 44 49<br>
+      🌐 www.arventagrup.com.tr<br>
+      📍 Devlet Mah. 376. Sk. Maksimum AVM No:16-17<br>
+      Etimesgut / Ankara
+    </p>
+  </div>
+</section>
+
+<footer class="py-4 text-center text-muted">
+  © 2025 ARVENTA. All rights reserved.
+</footer>
+
+<script>
+  function switchLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.classList.toggle('d-none', el.dataset.lang !== lang);
+    });
+  }
+</script>
+
+</body>
+</html>

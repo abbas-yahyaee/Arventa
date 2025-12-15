@@ -15,7 +15,38 @@
       --border:#2a2a2a;
       --muted:#b5b5b5;
       --accent:#d32f2f; /* restrained print red */
+      --logo-nav: 38px;
+      --logo-hero: 72px;
+      --logo-footer: 46px;
     }
+
+    .logo-mark {
+  width: 28px;
+  height: auto;
+  display: block;
+}
+
+.brand-name {
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  font-size: 1.2rem;
+}
+/* Variants */
+.logo-mark--hero { width: var(--logo-hero); }
+.logo-mark--footer { width: var(--logo-footer); }
+
+/* Optional: keep it crisp on all screens */
+.logo-mark {
+  image-rendering: auto;
+}
+
+/* If you inline the SVG (logo-mark-currentcolor.svg), control via color */
+.logo-inline {
+  width: var(--logo-nav);
+  height: auto;
+  display: block;
+  color: #ffffff; /* controls fill when using currentColor SVG */
+}
 
     body{
       background: var(--bg);
@@ -142,9 +173,13 @@
 <nav class="navbar navbar-dark navbar-expand-lg sticky-top">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center gap-3" href="#top">
-      <span class="brand-mark rounded-2 fw-bold">A</span>
-      <span class="fw-semibold">ARVENTA</span>
-    </a>
+  <img
+    src="images/logo/logo-mark.svg"
+    alt="Arventa"
+    class="logo-mark"
+  >
+  <span class="brand-name">ARVENTA</span>
+</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
       <span class="navbar-toggler-icon"></span>

@@ -1,0 +1,119 @@
+/* Card shell */
+.service-block{
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  width: 100%;
+
+  border: 1px solid rgba(255,255,255,.10);     /* main border on full card */
+  background: rgba(20,20,20,.45);              /* fallback base */
+  box-shadow: 0 20px 60px rgba(0,0,0,.40);     /* subtle depth */
+}
+.service-block:hover{
+  border-color: rgba(211,47,47,.35);
+}
+
+/* Glow layer: keep inside rounded mask */
+.service-block::before{
+  content:"";
+  position:absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: radial-gradient(800px 240px at 20% 0%, rgba(211,47,47,.18), transparent 60%);
+  opacity:.45;
+  transition: opacity .25s ease;
+  pointer-events:none;
+}
+.service-block:hover::before{ opacity:.75; }
+
+/* Inner: glass surface (no border here) */
+.service-block .inner{
+  position: relative;
+  background: rgba(20,20,20,.62);
+  border: 0;                                   /* moved border to .service-block */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* Grid equal heights */
+.services-grid > .col,
+.services-grid > .col-12{ display:flex; }
+
+/* Media: flush (card clips the corners) */
+.service-media{
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,.06); /* slightly softer divider */
+  background: rgba(255,255,255,.02);
+}
+
+.service-media img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(.9) contrast(1.05) brightness(.78);
+}
+@media (min-width: 992px){
+  .service-media img{ height: 200px; }
+}
+
+/* Icon + kicker */
+.service-kicker{
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-size: .74rem;
+  color: rgba(255,255,255,.70);
+}
+.service-icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+}
+.service-icon i{
+  font-size: 20px;
+  line-height: 1;
+  color: rgba(255,255,255,.90);
+}
+.service-block:hover .service-icon{ border-color: rgba(211,47,47,.35); }
+
+/* Chips */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.chip{
+  font-size: .8rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.82);
+}
+
+/* Lists */
+.service-cols ul{ margin-bottom:0; }
+
+/* CTAs aligned to bottom */
+.service-actions{
+  margin-top: auto;
+  padding-top: 16px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* Reveal */
+.reveal{ opacity:0; transform:translateY(12px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+}
